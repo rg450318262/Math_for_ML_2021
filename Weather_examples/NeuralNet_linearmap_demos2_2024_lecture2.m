@@ -30,8 +30,11 @@ msize = 6;
 % 2015 - 2019
 
 % Load normalized data
-load ML_Higham_applied2weather/Highamdata x1 x2 y
+load Weather_examples/ML_Higham_applied2weather/Highamdata x1 x2 y
+data = load ('Weather_examples/ML_Higham_applied2weather/Highamdata')
+display(data);
 len = length(x1);
+%% 
 
 % Plot data
 figure(1)
