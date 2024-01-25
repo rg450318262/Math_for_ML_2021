@@ -5,6 +5,7 @@
 
 clear all
 close all
+%% 
 
 % Graphical parameters
 color_summer = [200 0 0]/255;
@@ -12,14 +13,17 @@ color_fall   = [255 124 45]/255;
 color_winter = [0 0 255]/255;
 color_spring = [20 200 185]/255;
 msize        = 6;
+%% 
 
 % Load weather data
 % Column 2: Pressure (msl)	hPa
 % Column 6: Air temperature	degC
-load data/weather2019 w04 w07
+load /Users/rongguang/Documents/MATLAB/Math_for_ML_2021/Weather_examples/data/weather2019 w04 w07
+%% 
 
 w04y19 = w04; % April
 w07y19 = w07; % July
+%% 
 
 % First data coordinate is average air pressure (column 2). The 30 first 
 % datapoints are from April, and datapoints 31-60 are from July.
@@ -33,7 +37,7 @@ x2 = [w04y19(:,6); w07y19(:,6)];
 % In these demonstrations we want to use normalized data where all data 
 % values are between zero and one. Load normalization constants used in the
 % trained networks in subfolder ML_Higham_applied2weather/
-load ML_Higham_applied2weather/Highamdata x1MIN x1MAX x2MIN x2MAX 
+load /Users/rongguang/Documents/MATLAB/Math_for_ML_2021/Weather_examples/ML_Higham_applied2weather/Highamdata x1MIN x1MAX x2MIN x2MAX 
 
 x1 = x1-x1MIN;
 x1 = x1/(x1MAX-x1MIN);
